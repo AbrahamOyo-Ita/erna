@@ -10,6 +10,8 @@ The codebase is synced and tracking the upstream GitHub repository:
 - Repository: [https://github.com/AbrahamOyo-Ita/erna](https://github.com/AbrahamOyo-Ita/erna)
 - Branch: `main`
 - Security: `.gitignore` hardened to ensure zero credential/env leakage.
+- Vercel Deployment: Removed conflicting/stale `pnpm-lock.yaml` so Vercel uses `npm` and the up-to-date `package-lock.json`. Production build verified (`49/49` static & dynamic routes compiled successfully).
+
 
 ## Outcome
 
