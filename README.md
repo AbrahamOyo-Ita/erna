@@ -11,7 +11,7 @@
 
 ---
 
-## 📖 Overview
+## Overview
 
 **Erna** is a full-stack platform built for the Nigerian market where:
 - **Advertisers** fund and launch verified social media engagement campaigns (likes, follows, shares, reviews) and promote listings.
@@ -22,39 +22,39 @@ Designed as a modern, trust-first alternative to legacy reward platforms, Erna e
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### 💼 1. Micro-Task Engine & Campaigns
+### 1. Micro-Task Engine & Campaigns
 - **Multi-Platform Campaigns:** Support for X (Twitter), Instagram, TikTok, Facebook, YouTube, and Google Play Store reviews.
 - **Proof Verification:** Earners upload screenshots or evidence via drag-and-drop file upload with validation.
 - **Automated / Manual Review:** Support for automatic auto-approval timers or manual campaign manager review.
 - **Dispute & Appeal Workflow:** Transparent dispute mechanisms for rejected task submissions.
 
-### 🛍️ 2. Peer-to-Peer Marketplace
+### 2. Peer-to-Peer Marketplace
 - **Listings:** Create, edit, and browse products and services with image uploads and category filtering.
 - **Location Filtering:** Filter deals by state/region across Nigeria.
 - **Listing Boosts:** Promote items for enhanced visibility using wallet balances or direct payment.
 - **Direct Engagement:** Contact sellers directly via WhatsApp, phone, or email.
 
-### 💰 3. Nigerian Wallet & Banking Infrastructure
+### 3. Nigerian Wallet & Banking Infrastructure
 - **Paystack Integration:** Direct debit card funding, Paystack bank list resolution, and bank account name verification.
 - **Automated Webhooks:** Idempotent, HMAC-verified webhook processing for real-time wallet funding.
 - **Fast Withdrawals:** Automated or admin-approved bank transfer requests with transparent status tracking.
 - **Atomic Ledger Transactions:** Strict PostgreSQL transaction isolation and balance concurrency guards to eliminate double-spend risks.
 
-### 🔔 4. Notifications & WhatsApp (OpenWA) Outbox
+### 4. Notifications & WhatsApp (OpenWA) Outbox
 - **In-App Notifications:** Real-time bell notification drawer with unread tracking and click-to-read actions.
 - **Email Outbox Queue:** Background claim-based worker for transactional and notification emails.
 - **OpenWA WhatsApp Fanout:** Reliable asynchronous WhatsApp notification dispatch using a database-backed claim queue.
 
-### 🛡️ 5. Admin Console & Operations
+### 5. Admin Console & Operations
 - **Task & Submission Moderation:** Review, approve, reject, or manage appeals on task proof submissions.
 - **Payout Approval:** Batch review, inspect, and approve user withdrawal requests.
 - **User & Fraud Management:** Ban, unban, suspend, or promote users, inspect user ledgers, and manage dispute queues.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework:** [Next.js 16 (App Router)](https://nextjs.org/)
 - **UI & Components:** [React 19](https://react.dev/), [Base UI](https://base-ui.com/), [Tailwind CSS v4](https://tailwindcss.com/), [Lucide Icons](https://lucide.dev/)
@@ -65,7 +65,7 @@ Designed as a modern, trust-first alternative to legacy reward platforms, Erna e
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 ├── app/                        # Next.js 16 App Router pages and APIs
@@ -96,7 +96,7 @@ Designed as a modern, trust-first alternative to legacy reward platforms, Erna e
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - **Node.js**: v20.x or later
@@ -157,7 +157,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🧪 Testing & Validation
+## Testing & Validation
 
 ```bash
 # Run TypeScript compilation check
@@ -175,7 +175,7 @@ npm run test:live-db
 
 ---
 
-## 🔐 Security & Architecture Highlights
+## Security & Architecture Highlights
 
 - **Row Level Security (RLS):** Every single database table is protected by granular PostgreSQL policies enforcing least-privilege access.
 - **Session Management:** Secure proxy middleware preventing infinite redirect loops on revoked or expired sessions.
@@ -184,7 +184,7 @@ npm run test:live-db
 
 ---
 
-## 📄 Documentation
+## Documentation
 
 - [Product Requirements Document (PRD)](Erna_PRD.md)
 - [Implementation & Status Report](ERNA_IMPLEMENTATION_STATUS.md)
@@ -194,13 +194,13 @@ npm run test:live-db
 
 ---
 
-## 👤 Author
+## Author
 
 **Abraham Oyo-Ita**  
 - GitHub: [@AbrahamOyo-Ita](https://github.com/AbrahamOyo-Ita)
 
 ---
 
-## ⚖️ License
+## License
 
 Private & Proprietary. All rights reserved.
