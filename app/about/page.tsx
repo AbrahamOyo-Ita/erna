@@ -1,0 +1,26 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowRight, BadgeCheck, CircleDollarSign, Eye, ShieldCheck, Sparkles, UsersRound } from 'lucide-react'
+import { MarketingShell } from '@/components/marketing/marketing-shell'
+
+export const metadata: Metadata = {
+  title: 'About Erna | Clear work. Fair value.',
+  description: 'Learn why Erna is building a clearer way for Nigerians to earn from digital tasks and for advertisers to fund real actions.',
+}
+
+const principles = [
+  { icon: Eye, label: 'Clarity before commitment', text: 'People should see the action, payout and proof requirement before choosing a task.' },
+  { icon: CircleDollarSign, label: 'Money has a visible state', text: 'Campaign funds, earnings and withdrawals should never disappear into a vague process.' },
+  { icon: BadgeCheck, label: 'Proof earns trust', text: 'A consistent review trail protects honest workers and responsible advertisers.' },
+  { icon: UsersRound, label: 'Access should be free', text: 'No activation fee, paid earning tier or referral chain should stand between people and work.' },
+]
+
+export default function AboutPage() {
+  return <MarketingShell>
+    <section className="content-hero about-hero"><div className="content-orb" aria-hidden="true" /><div className="page-container content-hero-grid"><div><span className="eyebrow"><Sparkles size={15} /> About Erna</span><h1>Built for work people can <span>understand and trust.</span></h1><p>Erna is a Nigeria-focused platform where people complete clear digital tasks and advertisers fund measurable actions. No activation fee. No hidden task pricing. No mystery around what happens next.</p></div><div className="about-manifesto"><span className="manifesto-index">Our point of view</span><blockquote>Small online work should feel like real work: clear terms, fair value and a record both sides can follow.</blockquote><div><span><ShieldCheck size={17} /> Trust is designed in</span><span><BadgeCheck size={17} /> Proof is part of the flow</span></div></div></div></section>
+    <section className="content-section about-story"><div className="page-container story-grid"><div className="story-marker"><span>Why Erna</span><b>01</b></div><div className="story-copy"><h2>The gap was not opportunity. It was confidence.</h2><p>People want flexible ways to earn, but activation fees and unclear withdrawals create doubt. Advertisers want real engagement, but vague delivery makes every campaign feel risky.</p><p>Erna brings both sides into one transparent task flow. The worker knows the value before starting. The advertiser funds the work before it launches. Proof, review and payout all have a visible place.</p></div></div></section>
+    <section className="content-section about-audiences"><div className="page-container"><div className="section-kicker"><span className="eyebrow">One platform, two clear jobs</span><h2>Earn the value. Fund the action.</h2></div><div className="audience-stage"><article className="audience-worker"><span className="audience-number">For workers</span><h3>Choose work that fits your time.</h3><p>Browse by platform, action and payout. Complete the instructions, submit proof and follow the review through to your wallet.</p><ul><li><BadgeCheck size={17} /> No fee to unlock tasks</li><li><BadgeCheck size={17} /> Payout shown before you start</li><li><BadgeCheck size={17} /> Withdrawal status you can track</li></ul><Link className="arrow-link" href="/#get-started">Start earning <ArrowRight size={18} /></Link></article><div className="audience-bridge" aria-hidden="true"><span>Erna</span><small>clear value</small></div><article className="audience-advertiser"><span className="audience-number">For advertisers</span><h3>Turn a budget into defined actions.</h3><p>Choose the network, action and quantity. Fund the campaign before launch and review proof against the same instruction every worker received.</p><ul><li><ShieldCheck size={17} /> Funded before workers begin</li><li><ShieldCheck size={17} /> Fixed action and campaign cost</li><li><ShieldCheck size={17} /> Proof attached to submissions</li></ul><Link className="arrow-link" href="/#get-started">Post a task <ArrowRight size={18} /></Link></article></div></div></section>
+    <section className="content-section principles-section"><div className="page-container principles-layout"><div className="principles-intro"><span className="eyebrow">What guides us</span><h2>Restraint in the product. Precision in the promise.</h2><p>Every Erna decision should make the work easier to understand, safer to complete or simpler to audit.</p></div><div className="principles-list">{principles.map(({ icon: Icon, label, text }, index) => <article key={label}><span className="principle-icon"><Icon size={20} /></span><div><small>0{index + 1}</small><h3>{label}</h3><p>{text}</p></div></article>)}</div></div></section>
+    <section className="content-cta"><div className="page-container content-cta-inner"><div><span className="eyebrow">A clearer way to participate</span><h2>See the work. Know the value. Make your move.</h2></div><Link className="button button-primary" href="/#get-started">Join Erna for free <ArrowRight size={18} /></Link></div></section>
+  </MarketingShell>
+}

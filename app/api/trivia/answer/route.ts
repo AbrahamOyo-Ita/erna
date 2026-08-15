@@ -1,0 +1,4 @@
+import { NextResponse } from 'next/server'
+import { createAdminClient } from '@/lib/supabase/admin'
+import { apiError,assertSameOrigin,consumeLimit,requireUser,ApiError } from '@/lib/server/request'
+export async function POST(request:Request){try{assertSameOrigin(request);const user=await requireUser();await consumeLimit(user.id,'trivia:answer',5,86400);const b=await request.json();if(!/^[0-9a-f-]{36}$/i.test(String(b.questionId))||!Number.isInteger(b.selectedIndex)||b.selectedIndex<0||b.selectedIndex>3)throw new ApiError(400,'Invalid answer.');const admin=createAdminClient();const {data,error}=await admin.rpc('answer_daily_question',{p_user:user.id,p_question:b.questionId,p_selected:b.selectedIndex});if(error)throw error;return NextResponse.json(data)}catch(error){return apiError(error)}}

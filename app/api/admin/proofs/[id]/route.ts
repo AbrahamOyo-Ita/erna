@@ -1,0 +1,3 @@
+import { NextResponse } from 'next/server'
+import { requireAdmin,apiError,ApiError } from '@/lib/server/request'
+export async function GET(_:Request,context:{params:Promise<{id:string}>}){try{const {admin}=await requireAdmin();const {id}=await context.params;const sub=await admin.from('task_submissions').select('proof_path').eq('id',id).single();if(sub.error||!sub.data)throw new ApiError(404,'Proof not found.');const signed=await admin.storage.from('task-proofs').createSignedUrl(sub.data.proof_path,60);if(signed.error)throw signed.error;return NextResponse.redirect(signed.data.signedUrl)}catch(error){return apiError(error)}}

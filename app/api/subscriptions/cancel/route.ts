@@ -1,0 +1,5 @@
+import { NextResponse } from 'next/server'
+import { paystack } from '@/lib/paystack'
+import { apiError,assertSameOrigin,consumeLimit,requireUser,ApiError } from '@/lib/server/request'
+import { createAdminClient } from '@/lib/supabase/admin'
+export async function POST(request:Request){try{assertSameOrigin(request);const user=await requireUser();await consumeLimit(user.id,'subscription:cancel',3,86400);const admin=createAdminClient();const {data,error}=await admin.from('subscriptions').select('provider_subscription_code,provider_email_token').eq('user_id',user.id).eq('status','active').maybeSingle();if(error)throw error;if(!data?.provider_subscription_code||!data.provider_email_token)throw new ApiError(409,'No cancellable subscription was found.');await paystack('/subscription/disable',{method:'POST',body:JSON.stringify({code:data.provider_subscription_code,token:data.provider_email_token})});const result=await admin.rpc('cancel_subscription_event',{p_subscription_code:data.provider_subscription_code,p_immediate:false});if(result.error)throw result.error;return NextResponse.json({status:'non_renewing'})}catch(error){return apiError(error)}}

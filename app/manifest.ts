@@ -1,0 +1,2 @@
+import type { MetadataRoute } from 'next'
+export default function manifest():MetadataRoute.Manifest{return {name:'Erna — Earn from verified tasks',short_name:'Erna',description:'Nigeria-focused task earning and marketplace platform.',start_url:'/app',display:'standalone',background_color:'#fbfcfb',theme_color:'#116c36',icons:[{src:'/icon-light-32x32.png',sizes:'32x32',type:'image/png'},{src:'/apple-icon.png',sizes:'180x180',type:'image/png'}]}}
