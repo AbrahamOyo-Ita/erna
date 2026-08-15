@@ -1,8 +1,15 @@
 # Erna Implementation Status
 
-Last updated: August 11, 2026
+Last updated: August 15, 2026
 
 This document is the persistent project handoff for the latest UI, OpenWA, responsiveness, security and Phase 4 work. Future substantial status reports should update this file because the project owner cannot reliably scroll through long chat responses.
+
+## Repository & Deployment
+
+The codebase is synced and tracking the upstream GitHub repository:
+- Repository: [https://github.com/AbrahamOyo-Ita/erna](https://github.com/AbrahamOyo-Ita/erna)
+- Branch: `main`
+- Security: `.gitignore` hardened to ensure zero credential/env leakage.
 
 ## Outcome
 
